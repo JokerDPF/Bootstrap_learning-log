@@ -1,0 +1,138 @@
+@import "./base.less";
+@import "./normalize.less";
+
+// 变量：存储37.5
+@rootSize: 37.5rem;
+
+body{
+    background-color: #F0F0F0;
+}
+//  主体内容 html字号37.5
+.main{
+    padding-bottom: (50 / @rootSize);
+
+    // banner
+    .banner{
+        height: (160 /@rootSize);
+    }
+
+    // 活动标题
+    .title{
+        padding-left: (15/@rootSize);
+        height: (40/@rootSize);
+        line-height: (40/@rootSize);
+        h4{
+            font-size: (14/@rootSize);
+            color: #3c3c3c;
+        }
+    }
+
+    .item{
+        margin-bottom: (10/@rootSize);
+        .pic{
+            position: relative;
+            height: (160/@rootSize);
+            // 收藏图标
+            i{
+                position: absolute;
+                right:(18/@rootSize) ;
+                top:(15/@rootSize) ;
+                font-size: (24/@rootSize);
+                color: #fff;
+            }
+
+            // 活动状态
+            .active{
+                position: absolute;
+                left: (15/@rootSize);
+                top: (-4/@rootSize);
+                width: (68/@rootSize);
+                height: (29/@rootSize);
+                background-image: url(../images/status_active.png);
+                background-size: contain;
+                font-size: (12/@rootSize);
+                color: #fff;
+                line-height: (25/@rootSize);
+                text-align: center;
+
+                // 灰色图片样式
+                // 必须同时运用了active和off两个类才能生效
+                // div.off{} 交集选择器
+                &.off {
+                    position: absolute;
+                left: (15/@rootSize);
+                top: (-4/@rootSize);
+                width: (68/@rootSize);
+                height: (29/@rootSize);
+                background-image: url(../images/status_default.png);
+                background-size: contain;
+                font-size: (12/@rootSize);
+                color: #fff;
+                line-height: (25/@rootSize);
+                text-align: center;
+                }
+            }
+            // .off{
+            //     // 灰色图片
+            // }
+        }
+        .txt{
+            padding: (10/@rootSize) (15/@rootSize);
+            background-color: #fff;
+            .top{
+                display: flex;
+                justify-content: space-between;
+                h5{
+                    width: (290/@rootSize);
+                    font-size: (15/@rootSize);
+                    font-weight: 400;
+                    color: #3c3c3c;
+                }
+                p{
+                    font-size: (15/@rootSize);
+                    color: #FE6249;
+                }
+            }
+            .buttom{
+                display: flex;
+                color: #B4B4B4;
+                p{
+                    margin-top: (10/@rootSize);
+                    margin-right: (15/@rootSize);
+                    font-size: (11/@rootSize);
+                    i{
+                        font-size: (11/@rootSize);
+                    }
+
+                }
+            }
+        }
+    }
+}
+
+// 底部工具栏
+footer{
+    display: flex;
+    justify-content: space-around;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    // height: ( 50 / 37.5rem);
+    height: (50 / @rootSize);
+    background-color: #FECA49;
+    
+    text-align: center;
+    align-items: center;
+    a{
+        font-size: (11/@rootSize);
+        color: #D78B09;
+        .iconfont{
+            font-size: (24/@rootSize);
+        }
+
+        &.current{
+            color: #fff;
+        }
+    }
+}
